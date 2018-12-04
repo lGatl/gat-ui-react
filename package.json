@@ -1,0 +1,47 @@
+{
+  "name": "gat-ui-react",
+  "version": "0.0.6",
+  "description": "React Components for flexbox users",
+  "license": "ISC",
+  "name": "gat-ui-react",
+  "main": "build/index.js",
+  "peerDependencies": {
+    "react": "^15.5.4"
+  },
+  "dependencies": {
+    "react": "^15.5.4",
+    "webpack": "^2.6.1"
+  },
+   "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lGatl/gat-ui-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lGatl/gat-ui-react/issues"
+  },
+  "homepage": "https://github.com/lGatl/gat-ui-react#readme",
+  "keywords": [
+    "React",
+    "UI",
+    "Components",
+    "Component",
+    "flexbox"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch",
+    "build": "webpack"
+  },
+  "author": {
+    "name": "Adrien GATINOIS",
+    "email": "gat55@live.fr"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.5.1"
+  }
+}

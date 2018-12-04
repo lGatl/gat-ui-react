@@ -29,7 +29,7 @@ export default class Note extends Component {
 	}
 	click(){
 
-		this.props.onClick?this.props.onClick(this,this.state.temp):()=>{};
+		if(this.props.onClick){this.props.onClick(this,this.state.temp)};
 	}
 	render(){
 		let { full, empty, over } = this.style();

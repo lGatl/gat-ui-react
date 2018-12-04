@@ -16,7 +16,7 @@ export default class Button extends Component {
 	}
 	click(e){
 		e.preventDefault();
-		this.props.onClick?this.props.onClick():()=>{};
+		if(this.props.onClick){this.props.onClick()}
 	}
 	render(){
 		let {s_container, s_button} = this.style();
