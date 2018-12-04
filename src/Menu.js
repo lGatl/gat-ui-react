@@ -16,7 +16,7 @@ export default class Menu extends Component {
 			},
 		};
 	}
-	static Item = MenuItem;
+	// static Item = MenuItem;
 
 	click(e){
 		e.preventDefault();

@@ -4,9 +4,9 @@ import FormTextArea from "./TextArea";
 import FormButton from "./Button";
 
 export default class Form extends Component {
-	static Input = FormInput;
-	static TextArea = FormTextArea;
-	static Button = FormButton;
+	// static Input = FormInput;
+	// static TextArea = FormTextArea;
+	// static Button = FormButton;
 	render(){
 		return (
 			<form>

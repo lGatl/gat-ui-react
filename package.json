@@ -3,7 +3,6 @@
   "version": "0.0.6",
   "description": "React Components for flexbox users",
   "license": "ISC",
-  "name": "gat-ui-react",
   "main": "build/index.js",
   "peerDependencies": {
     "react": "^15.5.4"
@@ -12,7 +11,7 @@
     "react": "^15.5.4",
     "webpack": "^2.6.1"
   },
-   "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/lGatl/gat-ui-react.git"
   },
