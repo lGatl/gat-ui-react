@@ -1,6 +1,6 @@
 import React,{ Component } 	from "react";
 
-export default class Calendrier extends Component{
+export default class Calendar extends Component{
 	constructor(){
 		super();
 		this.setWrapperRef = this.setWrapperRef.bind(this);           

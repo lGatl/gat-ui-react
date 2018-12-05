@@ -546,13 +546,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Calendrier = function (_Component) {
-	_inherits(Calendrier, _Component);
+var Calendar = function (_Component) {
+	_inherits(Calendar, _Component);
 
-	function Calendrier() {
-		_classCallCheck(this, Calendrier);
+	function Calendar() {
+		_classCallCheck(this, Calendar);
 
-		var _this = _possibleConstructorReturn(this, (Calendrier.__proto__ || Object.getPrototypeOf(Calendrier)).call(this));
+		var _this = _possibleConstructorReturn(this, (Calendar.__proto__ || Object.getPrototypeOf(Calendar)).call(this));
 
 		_this.setWrapperRef = _this.setWrapperRef.bind(_this);
 		_this.handleClickOutside = _this.handleClickOutside.bind(_this);
@@ -566,7 +566,7 @@ var Calendrier = function (_Component) {
 		return _this;
 	}
 
-	_createClass(Calendrier, [{
+	_createClass(Calendar, [{
 		key: "componentDidMount",
 		value: function componentDidMount() {
 			document.addEventListener("mousedown", this.handleClickOutside);
@@ -832,10 +832,10 @@ var Calendrier = function (_Component) {
 		}
 	}]);
 
-	return Calendrier;
+	return Calendar;
 }(_react.Component);
 
-exports.default = Calendrier;
+exports.default = Calendar;
 
 /***/ }),
 /* 7 */
@@ -2108,7 +2108,7 @@ exports.default = Titre1;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Notification = exports.Carrousel = exports.Note = exports.Popup = exports.A = exports.Calendrier = exports.Table = exports.Checkbox = exports.Dropdown = exports.Item = exports.Menu = exports.Titre1 = exports.Titre = exports.Segment = exports.Form = exports.Button = exports.TextArea = exports.Input = undefined;
+exports.Notification = exports.Carrousel = exports.Note = exports.Popup = exports.A = exports.Calendar = exports.Table = exports.Checkbox = exports.Dropdown = exports.Item = exports.Menu = exports.Titre1 = exports.Titre = exports.Segment = exports.Form = exports.Button = exports.TextArea = exports.Input = undefined;
 
 var _Form = __webpack_require__(10);
 
@@ -2158,9 +2158,9 @@ var _Table = __webpack_require__(16);
 
 var _Table2 = _interopRequireDefault(_Table);
 
-var _Calendrier = __webpack_require__(6);
+var _Calendar = __webpack_require__(6);
 
-var _Calendrier2 = _interopRequireDefault(_Calendrier);
+var _Calendar2 = _interopRequireDefault(_Calendar);
 
 var _A = __webpack_require__(5);
 
@@ -2196,7 +2196,7 @@ exports.Item = _Item2.default;
 exports.Dropdown = _Dropdown2.default;
 exports.Checkbox = _Checkbox2.default;
 exports.Table = _Table2.default;
-exports.Calendrier = _Calendrier2.default;
+exports.Calendar = _Calendar2.default;
 exports.A = _A2.default;
 exports.Popup = _Popup2.default;
 exports.Note = _Note2.default;
