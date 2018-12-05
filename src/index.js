@@ -9,12 +9,12 @@ import Menu from "./Menu";
 import Item from "./Item";
 import Dropdown from "./Dropdown";
 import Checkbox from "./Checkbox";
-import Tableau from "./Tableau";
+import Table from "./Table";
 import Calendrier from "./Calendrier";
 import A from "./A";
-import Popop from "./Popop";
+import Popup from "./Popup";
 import Note from "./Note";
 import Carrousel from "./Carrousel";
 import Notification from "./Notification";
 
-export { Input, TextArea, Button, Form, Segment, Titre, Titre1, Menu, Item, Dropdown, Checkbox, Tableau, Calendrier, A, Popop, Note, Carrousel, Notification };
+export { Input, TextArea, Button, Form, Segment, Titre, Titre1, Menu, Item, Dropdown, Checkbox, Table, Calendrier, A, Popup, Note, Carrousel, Notification };
