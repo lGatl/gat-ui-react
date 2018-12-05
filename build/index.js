@@ -1667,16 +1667,16 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Popop = function (_Component) {
-	_inherits(Popop, _Component);
+var Popup = function (_Component) {
+	_inherits(Popup, _Component);
 
-	function Popop() {
-		_classCallCheck(this, Popop);
+	function Popup() {
+		_classCallCheck(this, Popup);
 
-		return _possibleConstructorReturn(this, (Popop.__proto__ || Object.getPrototypeOf(Popop)).apply(this, arguments));
+		return _possibleConstructorReturn(this, (Popup.__proto__ || Object.getPrototypeOf(Popup)).apply(this, arguments));
 	}
 
-	_createClass(Popop, [{
+	_createClass(Popup, [{
 		key: "render",
 		value: function render() {
 			return _react2.default.createElement(
@@ -1714,10 +1714,10 @@ var Popop = function (_Component) {
 		}
 	}]);
 
-	return Popop;
+	return Popup;
 }(_react.Component);
 
-exports.default = Popop;
+exports.default = Popup;
 
 /***/ }),
 /* 15 */
@@ -1819,16 +1819,16 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Tableau = function (_Component) {
-	_inherits(Tableau, _Component);
+var Table = function (_Component) {
+	_inherits(Table, _Component);
 
-	function Tableau() {
-		_classCallCheck(this, Tableau);
+	function Table() {
+		_classCallCheck(this, Table);
 
-		return _possibleConstructorReturn(this, (Tableau.__proto__ || Object.getPrototypeOf(Tableau)).apply(this, arguments));
+		return _possibleConstructorReturn(this, (Table.__proto__ || Object.getPrototypeOf(Table)).apply(this, arguments));
 	}
 
-	_createClass(Tableau, [{
+	_createClass(Table, [{
 		key: "style",
 		value: function style() {
 			return {
@@ -1972,10 +1972,10 @@ var Tableau = function (_Component) {
 		}
 	}]);
 
-	return Tableau;
+	return Table;
 }(_react.Component);
 
-exports.default = Tableau;
+exports.default = Table;
 
 /***/ }),
 /* 17 */
@@ -2108,7 +2108,7 @@ exports.default = Titre1;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Notification = exports.Carrousel = exports.Note = exports.Popop = exports.A = exports.Calendrier = exports.Tableau = exports.Checkbox = exports.Dropdown = exports.Item = exports.Menu = exports.Titre1 = exports.Titre = exports.Segment = exports.Form = exports.Button = exports.TextArea = exports.Input = undefined;
+exports.Notification = exports.Carrousel = exports.Note = exports.Popup = exports.A = exports.Calendrier = exports.Table = exports.Checkbox = exports.Dropdown = exports.Item = exports.Menu = exports.Titre1 = exports.Titre = exports.Segment = exports.Form = exports.Button = exports.TextArea = exports.Input = undefined;
 
 var _Form = __webpack_require__(10);
 
@@ -2154,9 +2154,9 @@ var _Checkbox = __webpack_require__(8);
 
 var _Checkbox2 = _interopRequireDefault(_Checkbox);
 
-var _Tableau = __webpack_require__(16);
+var _Table = __webpack_require__(16);
 
-var _Tableau2 = _interopRequireDefault(_Tableau);
+var _Table2 = _interopRequireDefault(_Table);
 
 var _Calendrier = __webpack_require__(6);
 
@@ -2166,9 +2166,9 @@ var _A = __webpack_require__(5);
 
 var _A2 = _interopRequireDefault(_A);
 
-var _Popop = __webpack_require__(14);
+var _Popup = __webpack_require__(14);
 
-var _Popop2 = _interopRequireDefault(_Popop);
+var _Popup2 = _interopRequireDefault(_Popup);
 
 var _Note = __webpack_require__(12);
 
@@ -2195,10 +2195,10 @@ exports.Menu = _Menu2.default;
 exports.Item = _Item2.default;
 exports.Dropdown = _Dropdown2.default;
 exports.Checkbox = _Checkbox2.default;
-exports.Tableau = _Tableau2.default;
+exports.Table = _Table2.default;
 exports.Calendrier = _Calendrier2.default;
 exports.A = _A2.default;
-exports.Popop = _Popop2.default;
+exports.Popup = _Popup2.default;
 exports.Note = _Note2.default;
 exports.Carrousel = _Carrousel2.default;
 exports.Notification = _Notification2.default;
