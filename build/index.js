@@ -1365,7 +1365,7 @@ var Form = function (_Component) {
 				"form",
 				{
 					style: _extends({ display: "flex", flex: 1 }, this.props.style),
-					onSubmit: this.onSubmit ? this.onSubmit.bind(this) : emptyFunction.bind(this)
+					onSubmit: this.props.onSubmit ? this.props.onSubmit.bind(this) : this.emptyFunction.bind(this)
 				},
 				this.props.children || ""
 			);

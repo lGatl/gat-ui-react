@@ -8,12 +8,12 @@ export default class Form extends Component {
 	// static TextArea = FormTextArea;
 	// static Button = FormButton;
 	emptyFunction(){}
-	emptyStyle(){}
+
 	render(){
 		return (
 			<form 
 				style = {{display:"flex",flex:1, ...this.props.style}}
-				onSubmit = {this.onSubmit?this.onSubmit.bind(this):emptyFunction.bind(this)}
+				onSubmit = {this.props.onSubmit?this.props.onSubmit.bind(this):this.emptyFunction.bind(this)}
 			>
 					{ this.props.children||"" }
 			</form>
