@@ -1543,7 +1543,7 @@ var Note = function (_Component) {
 				{ style: _extends({ userSelect: "none", display: "flex", fontSize: 40 }, this.props.style) },
 				_react2.default.createElement(
 					"div",
-					{ style: { userSelect: "none", display: "flex", cursor: this.props.onChange ? "pointer" : "default" }, onChange: this.click.bind(this) },
+					{ style: { userSelect: "none", display: "flex", cursor: this.props.onChange ? "pointer" : "default" }, onClick: this.click.bind(this) },
 					[1, 2, 3, 4, 5].map(function (nb) {
 						return _react2.default.createElement(
 							"div",

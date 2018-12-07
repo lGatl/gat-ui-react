@@ -38,7 +38,7 @@ export default class Note extends Component {
 		note = note == undefined?0:note;
 		return (
 			<div style = {{userSelect:"none",display:"flex",fontSize:40,...this.props.style}}>
-				<div style = {{userSelect:"none",display:"flex", cursor:this.props.onChange?"pointer":"default"}} onChange = {this.click.bind(this)}>
+				<div style = {{userSelect:"none",display:"flex", cursor:this.props.onChange?"pointer":"default"}} onClick = {this.click.bind(this)}>
 					{[1,2,3,4,5].map(nb=><div style = {{userSelect:"none"}} key={nb} 
 						onMouseOut={this.props.onChange?this.out.bind(this):()=>{}} 
 						onMouseOver={this.props.onChange?this.over.bind(this,nb):()=>{}} 
