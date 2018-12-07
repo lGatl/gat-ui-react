@@ -1520,9 +1520,10 @@ var Note = function (_Component) {
 		value: function click(e) {
 			var _props = this.props,
 			    name = _props.name,
-			    onChange = _props.onChange;
+			    onChange = _props.onChange,
+			    note = _props.note;
 
-			onChange(e, { name: name, note: this.state.temp });
+			onChange(e, { name: name, note: this.state.temp == note ? 0 : this.state.temp });
 		}
 	}, {
 		key: "render",
