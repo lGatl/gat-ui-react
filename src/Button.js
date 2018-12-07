@@ -19,7 +19,7 @@ export default class Button extends Component {
 		if(this.props.onClick){this.props.onClick()}
 	}
 	render(){
-		let {s_container, s_button} = this.style();
+		let { s_button } = this.style();
 		return (
 			<button style={{...s_button, ...this.props.style}} onClick={this.click.bind(this)} >
 				{this.props.children}
