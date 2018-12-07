@@ -1356,15 +1356,12 @@ var Form = function (_Component) {
 		// static Button = FormButton;
 		value: function emptyFunction() {}
 	}, {
-		key: "emptyStyle",
-		value: function emptyStyle() {}
-	}, {
 		key: "render",
 		value: function render() {
 			return _react2.default.createElement(
 				"form",
 				{
-					style: _extends({ display: "flex", flex: 1 }, this.props.style),
+					style: _extends({ display: "flex", flexDirection: "column", flex: 1 }, this.props.style),
 					onSubmit: this.props.onSubmit ? this.props.onSubmit.bind(this) : this.emptyFunction.bind(this)
 				},
 				this.props.children || ""

@@ -12,7 +12,7 @@ export default class Form extends Component {
 	render(){
 		return (
 			<form 
-				style = {{display:"flex",flex:1, ...this.props.style}}
+				style = {{display:"flex", flexDirection:"column", flex:1, ...this.props.style}}
 				onSubmit = {this.props.onSubmit?this.props.onSubmit.bind(this):this.emptyFunction.bind(this)}
 			>
 					{ this.props.children||"" }
