@@ -1517,14 +1517,12 @@ var Note = function (_Component) {
 		}
 	}, {
 		key: "click",
-		value: function click() {
+		value: function click(e) {
 			var _props = this.props,
 			    name = _props.name,
 			    onChange = _props.onChange;
 
-			if (this.props.onChange) {
-				onChange(this, { name: name, note: this.state.temp });
-			};
+			onChange(e, { name: name, note: this.state.temp });
 		}
 	}, {
 		key: "render",

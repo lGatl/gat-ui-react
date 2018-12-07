@@ -27,9 +27,9 @@ export default class Note extends Component {
 	out(){
 		this.setState({temp:0});
 	}
-	click(){
+	click(e){
 		let {name, onChange} = this.props;
-		if(this.props.onChange){onChange(this,{name:name,note:this.state.temp})};
+		onChange(e,{name:name,note:this.state.temp})
 	}
 	render(){
 		let { full, empty, over } = this.style();
