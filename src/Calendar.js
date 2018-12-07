@@ -71,7 +71,7 @@ export default class Calendar extends Component{
 		let { name, onChange} = this.props;
 		if(value!=""){
 			//this.setState({show:false});
-			onChange(e,{ name, value:(new Date(annee,mois,value)) });
+			onChange(e,{ name, date:(new Date(annee,mois,value)) });
 		}
 	}
 	render(){

@@ -649,7 +649,7 @@ var Calendar = function (_Component) {
 
 			if (value != "") {
 				//this.setState({show:false});
-				onChange(e, { name: name, value: new Date(annee, mois, value) });
+				onChange(e, { name: name, date: new Date(annee, mois, value) });
 			}
 		}
 	}, {
