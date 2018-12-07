@@ -28,8 +28,8 @@ export default class Note extends Component {
 		this.setState({temp:0});
 	}
 	click(){
-
-		if(this.props.onClick){this.props.onClick(this,this.state.temp)};
+		let {name, onChange} = this.props;
+		if(this.props.onChange){onChange(this,{name:name,note:this.state.temp})};
 	}
 	render(){
 		let { full, empty, over } = this.style();
@@ -38,10 +38,10 @@ export default class Note extends Component {
 		note = note == undefined?0:note;
 		return (
 			<div style = {{userSelect:"none",display:"flex",fontSize:40,...this.props.style}}>
-				<div style = {{userSelect:"none",display:"flex", cursor:this.props.onClick?"pointer":"default"}} onClick = {this.click.bind(this)}>
+				<div style = {{userSelect:"none",display:"flex", cursor:this.props.onChange?"pointer":"default"}} onChange = {this.click.bind(this)}>
 					{[1,2,3,4,5].map(nb=><div style = {{userSelect:"none"}} key={nb} 
-						onMouseOut={this.props.onClick?this.out.bind(this):()=>{}} 
-						onMouseOver={this.props.onClick?this.over.bind(this,nb):()=>{}} 
+						onMouseOut={this.props.onChange?this.out.bind(this):()=>{}} 
+						onMouseOver={this.props.onChange?this.over.bind(this,nb):()=>{}} 
 						style = {temp>(nb-.5)?over:note>(nb-.5)?full:empty}>★</div>)}
 				</div>
 			</div>

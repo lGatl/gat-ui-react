@@ -136,7 +136,6 @@ var Button = function (_Component) {
 		key: "render",
 		value: function render() {
 			var _style = this.style(),
-			    s_container = _style.s_container,
 			    s_button = _style.s_button;
 
 			return _react2.default.createElement(
@@ -1519,9 +1518,12 @@ var Note = function (_Component) {
 	}, {
 		key: "click",
 		value: function click() {
+			var _props = this.props,
+			    name = _props.name,
+			    onChange = _props.onChange;
 
-			if (this.props.onClick) {
-				this.props.onClick(this, this.state.temp);
+			if (this.props.onChange) {
+				onChange(this, { name: name, note: this.state.temp });
 			};
 		}
 	}, {
@@ -1543,13 +1545,13 @@ var Note = function (_Component) {
 				{ style: _extends({ userSelect: "none", display: "flex", fontSize: 40 }, this.props.style) },
 				_react2.default.createElement(
 					"div",
-					{ style: { userSelect: "none", display: "flex", cursor: this.props.onClick ? "pointer" : "default" }, onClick: this.click.bind(this) },
+					{ style: { userSelect: "none", display: "flex", cursor: this.props.onChange ? "pointer" : "default" }, onChange: this.click.bind(this) },
 					[1, 2, 3, 4, 5].map(function (nb) {
 						return _react2.default.createElement(
 							"div",
 							_defineProperty({ style: { userSelect: "none" }, key: nb,
-								onMouseOut: _this2.props.onClick ? _this2.out.bind(_this2) : function () {},
-								onMouseOver: _this2.props.onClick ? _this2.over.bind(_this2, nb) : function () {}
+								onMouseOut: _this2.props.onChange ? _this2.out.bind(_this2) : function () {},
+								onMouseOver: _this2.props.onChange ? _this2.over.bind(_this2, nb) : function () {}
 							}, "style", temp > nb - .5 ? over : note > nb - .5 ? full : empty),
 							"\u2605"
 						);
