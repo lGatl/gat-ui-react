@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-export default class Note extends Component {
+export default class Rating extends Component {
 	constructor(){
 		super();
 		this.state = {temp:0};
@@ -28,21 +28,21 @@ export default class Note extends Component {
 		this.setState({temp:0});
 	}
 	click(e){
-		let {name, onChange, note} = this.props;
-		onChange(e,{name:name,note:this.state.temp==note?0:this.state.temp})
+		let {name, onChange, rating} = this.props;
+		onChange(e,{name:name,rating:this.state.temp==rating?0:this.state.temp})
 	}
 	render(){
 		let { full, empty, over } = this.style();
-		let { note } = this.props;
+		let { rating } = this.props;
 		let { temp } = this.state;
-		note = note == undefined?0:note;
+		rating = rating == undefined?0:rating;
 		return (
 			<div style = {{userSelect:"none",display:"flex",fontSize:40,...this.props.style}}>
 				<div style = {{userSelect:"none",display:"flex", cursor:this.props.onChange?"pointer":"default"}} onClick = {this.click.bind(this)}>
 					{[1,2,3,4,5].map(nb=><div style = {{userSelect:"none"}} key={nb} 
 						onMouseOut={this.props.onChange?this.out.bind(this):()=>{}} 
 						onMouseOver={this.props.onChange?this.over.bind(this,nb):()=>{}} 
-						style = {temp>(nb-.5)?over:note>(nb-.5)?full:empty}>★</div>)}
+						style = {temp>(nb-.5)?over:rating>(nb-.5)?full:empty}>★</div>)}
 				</div>
 			</div>
 		);

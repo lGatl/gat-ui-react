@@ -1,6 +1,6 @@
 {
   "name": "gat-ui-react",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "React Components for flexbox users",
   "license": "ISC",
   "main": "build/index.js",

@@ -13,8 +13,8 @@ import Table from "./Table";
 import Calendar from "./Calendar";
 import A from "./A";
 import Popup from "./Popup";
-import Note from "./Note";
+import Rating from "./Rating";
 import Carrousel from "./Carrousel";
 import Notification from "./Notification";
 
-export { Input, TextArea, Button, Form, Segment, Titre, Titre1, Menu, Item, Dropdown, Checkbox, Table, Calendar, A, Popup, Note, Carrousel, Notification };
+export { Input, TextArea, Button, Form, Segment, Titre, Titre1, Menu, Item, Dropdown, Checkbox, Table, Calendar, A, Popup, Rating, Carrousel, Notification };
