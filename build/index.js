@@ -313,7 +313,11 @@ var Item = function (_Component) {
 		}
 	}, {
 		key: "emptyfunction",
-		value: function emptyfunction() {}
+		value: function emptyfunction(e) {
+			if (this.props.href) {
+				e.preventDefault();
+			}
+		}
 		//================CSS======================
 
 	}, {
