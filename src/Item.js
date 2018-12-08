@@ -33,7 +33,7 @@ export default class Item extends Component {
 	}
 	render(){
 		let {s_item} = this.style();
-		let {style, href, onClick, img, children, hover_style,active, actif_style} = this.props;
+		let {style, href, onClick, img, children, hover_style,active, active_style} = this.props;
 		hover_style = this.state.hover&&hover_style?hover_style:this.state.hover?{backgroundColor:"rgba(255,255,255,0.5)"}:{};
 		active_style = active&&active_style?active_style:active?{backgroundColor:"rgba(0,0,0,0.1)"}:{};
 		return (

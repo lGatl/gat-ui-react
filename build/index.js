@@ -350,7 +350,7 @@ var Item = function (_Component) {
 			    children = _props.children,
 			    hover_style = _props.hover_style,
 			    active = _props.active,
-			    actif_style = _props.actif_style;
+			    active_style = _props.active_style;
 
 			hover_style = this.state.hover && hover_style ? hover_style : this.state.hover ? { backgroundColor: "rgba(255,255,255,0.5)" } : {};
 			active_style = active && active_style ? active_style : active ? { backgroundColor: "rgba(0,0,0,0.1)" } : {};
