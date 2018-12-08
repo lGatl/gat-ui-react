@@ -33,11 +33,11 @@ export default class Item extends Component {
 	}
 	render(){
 		let {s_item} = this.style();
-		let {style, href, onClick, img, children, hover, actif} = this.props;
-		let style_hover = this.state.hover&&hover?hover:this.state.hover?{backgroundColor:"rgba(255,255,255,0.5)"}:{};
-		let style_actif = this.state.actif&&actif?actif:this.state.actif?{backgroundColor:"rgba(0,0,0,0.1)"}:{};
+		let {style, href, onClick, img, children, hover_style,active, actif_style} = this.props;
+		hover_style = this.state.hover&&hover_style?hover_style:this.state.hover?{backgroundColor:"rgba(255,255,255,0.5)"}:{};
+		active_style = active&&active_style?active_style:active?{backgroundColor:"rgba(0,0,0,0.1)"}:{};
 		return (
-			<a style={{...s_item, ...style,...style_hover, ...style_actif}} 
+			<a style={{...s_item, ...style,...hover_style, ...active_style}} 
 				href={href?href:"#"} 
 				onMouseOver = { this.onMouseOver.bind(this) } 
 				onMouseOut={ this.onMouseOut.bind(this) } 

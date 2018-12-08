@@ -348,14 +348,15 @@ var Item = function (_Component) {
 			    onClick = _props.onClick,
 			    img = _props.img,
 			    children = _props.children,
-			    hover = _props.hover,
-			    actif = _props.actif;
+			    hover_style = _props.hover_style,
+			    active = _props.active,
+			    actif_style = _props.actif_style;
 
-			var style_hover = this.state.hover && hover ? hover : this.state.hover ? { backgroundColor: "rgba(255,255,255,0.5)" } : {};
-			var style_actif = this.state.actif && actif ? actif : this.state.actif ? { backgroundColor: "rgba(0,0,0,0.1)" } : {};
+			hover_style = this.state.hover && hover_style ? hover_style : this.state.hover ? { backgroundColor: "rgba(255,255,255,0.5)" } : {};
+			active_style = active && active_style ? active_style : active ? { backgroundColor: "rgba(0,0,0,0.1)" } : {};
 			return _react2.default.createElement(
 				"a",
-				{ style: _extends({}, s_item, style, style_hover, style_actif),
+				{ style: _extends({}, s_item, style, hover_style, active_style),
 					href: href ? href : "#",
 					onMouseOver: this.onMouseOver.bind(this),
 					onMouseOut: this.onMouseOut.bind(this),
