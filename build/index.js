@@ -311,14 +311,15 @@ var Item = function (_Component) {
 		value: function onMouseOut() {
 			this.setState({ hover: false });
 		}
+	}, {
+		key: "emptyfunction",
+		value: function emptyfunction() {}
 		//================CSS======================
 
 	}, {
 		key: "style",
 		value: function style() {
-
 			return {
-
 				s_item: {
 					display: "flex",
 					alignItems: "center",
@@ -329,7 +330,6 @@ var Item = function (_Component) {
 					paddingLeft: 10,
 					paddingRight: 10,
 					cursor: "pointer",
-					backgroundColor: this.state.hover || this.props.active ? this.props.active ? "rgba(0,0,0,0.1)" : "rgba(255,255,255,0.5)" : "rgba(255,255,255,0)",
 					borderleft: "1px solid rgba(150,150,150,0.5)",
 					borderRight: "1px solid rgba(150,150,150,0.5)",
 					boxShadow: "1px 1px 1px rgba(150,150,150,0.3)"
@@ -342,12 +342,26 @@ var Item = function (_Component) {
 			var _style = this.style(),
 			    s_item = _style.s_item;
 
-			var style = this.props.style;
+			var _props = this.props,
+			    style = _props.style,
+			    href = _props.href,
+			    onClick = _props.onClick,
+			    img = _props.img,
+			    children = _props.children,
+			    hover = _props.hover,
+			    actif = _props.actif;
 
+			var style_hover = this.state.hover && hover ? hover : this.state.hover ? { backgroundColor: "rgba(255,255,255,0.5)" } : {};
+			var style_actif = this.state.actif && actif ? actif : this.state.actif ? { backgroundColor: "rgba(0,0,0,0.1)" } : {};
 			return _react2.default.createElement(
 				"a",
-				{ style: _extends({}, s_item, style, this.props.style), href: "#", onMouseOver: this.onMouseOver.bind(this), onMouseOut: this.onMouseOut.bind(this), onClick: this.props.onClick ? this.props.onClick.bind(this) : function () {} },
-				this.props.img ? _react2.default.createElement("img", { src: this.props.img, alt: "profile" }) : this.props.children
+				{ style: _extends({}, s_item, style, style_hover, style_actif),
+					href: href ? href : "#",
+					onMouseOver: this.onMouseOver.bind(this),
+					onMouseOut: this.onMouseOut.bind(this),
+					onClick: onClick ? onClick.bind(this) : this.emptyfunction.bind(this)
+				},
+				img ? _react2.default.createElement("img", { src: img, alt: "item" }) : children
 			);
 		}
 	}]);
