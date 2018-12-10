@@ -11,11 +11,7 @@ export default class Item extends Component {
 	onMouseOut(){
 		this.setState({hover:false});
 	}
-	emptyfunction(e){
-		if(this.props.href){
-			e.preventDefault();
-		}
-	}
+	emptyfunction(e){}
 	//================CSS======================
 	style(){
 		return{

@@ -1,10 +1,15 @@
 import React, {Component} from "react";
 
-import MenuItem from "./Item";
-
-
-
 export default class Menu extends Component {
+	constructor(){
+		super()
+		this.state = {
+			show: false
+		}
+		this.setWrapperRef = this.setWrapperRef.bind(this);           
+		this.handleClickOutside = this.handleClickOutside.bind(this);
+		
+	}
 	style(){
 		return{
 			s_container:{
@@ -13,21 +18,66 @@ export default class Menu extends Component {
 				flexDirection:this.props.row ? "row" : "column",
 				border: "1px solid rgba(150,150,150,0.5)",
 				alignItems:"strecth",
+
 			},
+			mobile:{
+				position:"fixed",
+				zIndex:9999,
+				flex:1,
+				left:this.state.show?0:-500,
+				transitionDuration: "1s"
+			}
 		};
 	}
-	// static Item = MenuItem;
+		componentDidMount() {
+		document.addEventListener('mousedown', this.handleClickOutside);
+	}
 
-	click(e){
-		e.preventDefault();
-		this.props.onClick();
+	componentWillUnmount() {
+		document.removeEventListener('mousedown', this.handleClickOutside);
+	}
+	setWrapperRef(node) {
+		this.wrapperRef = node;
+	}
+	handleClickOutside(event) {
+		if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+			this.setState({show:false});
+		}else{}
+	}
+	clickCarre(){
+		this.setState({show: !this.state.show})
+	}
+	box(){
+		return(
+			<div 
+			onClick={this.clickCarre.bind(this)}
+			style={{
+				display: this.props.mobile?"flex":"none",
+				borderRadius:10,
+				boxShadow: "1px 1px 1px rgba(150,150,150,0.5)",
+				height:40,
+				width:40,
+				padding:10,
+				flexDirection:"column",
+				...this.props.style_box
+			}}>
+				<div style={{borderBottom:"solid 2px black", flex:1}}></div>
+				<div style={{borderBottom:"solid 2px black", flex:1}}></div>
+				<div style={{borderBottom:"solid 2px black", flex:1}}></div>
+				<div style={{flex:1}}></div>
+			</div>
+			)
 	}
 	render(){
-		let {s_container} = this.style();
+		let {s_container, mobile} = this.style();
+		mobile = this.props.mobile?mobile:{}
 		return (
 			<div className = {this.props.className} style={{...s_container, ...this.props.style}}>
-
-				{this.props.children}
+				{this.box()}
+				<div ref={this.setWrapperRef} style={{...mobile}}>
+					{this.props.children}
+				</div>
+				
 				
 			</div>
 			
