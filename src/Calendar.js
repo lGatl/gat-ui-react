@@ -14,11 +14,13 @@ export default class Calendar extends Component{
 		};
 	}
 	componentDidMount() {
-		document.addEventListener("mousedown", this.handleClickOutside);
+		document.addEventListener('mousedown', this.handleClickOutside);
+		document.addEventListener('touchstart', this.handleClickOutside);
 	}
 
 	componentWillUnmount() {
-		document.removeEventListener("mousedown", this.handleClickOutside);
+		document.removeEventListener('mousedown', this.handleClickOutside);
+		document.removeEventListener('touchstart', this.handleClickOutside);
 	}
 	componentWillMount(){
 

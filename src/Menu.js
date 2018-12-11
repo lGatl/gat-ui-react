@@ -13,7 +13,6 @@ export default class Menu extends Component {
 	style(){
 		return{
 			s_container:{
-				flex:1,
 				display:"flex",
 				overflow:"hidden",
 				flexDirection:this.props.row ? "row" : "column",

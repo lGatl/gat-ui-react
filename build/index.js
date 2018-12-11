@@ -471,17 +471,19 @@ var Calendar = function (_Component) {
 	}
 
 	_createClass(Calendar, [{
-		key: "componentDidMount",
+		key: 'componentDidMount',
 		value: function componentDidMount() {
-			document.addEventListener("mousedown", this.handleClickOutside);
+			document.addEventListener('mousedown', this.handleClickOutside);
+			document.addEventListener('touchstart', this.handleClickOutside);
 		}
 	}, {
-		key: "componentWillUnmount",
+		key: 'componentWillUnmount',
 		value: function componentWillUnmount() {
-			document.removeEventListener("mousedown", this.handleClickOutside);
+			document.removeEventListener('mousedown', this.handleClickOutside);
+			document.removeEventListener('touchstart', this.handleClickOutside);
 		}
 	}, {
-		key: "componentWillMount",
+		key: 'componentWillMount',
 		value: function componentWillMount() {
 
 			this.setState({
@@ -491,59 +493,59 @@ var Calendar = function (_Component) {
 			});
 		}
 	}, {
-		key: "style",
+		key: 'style',
 		value: function style() {
 			return {
 				container: {}
 			};
 		}
 	}, {
-		key: "setWrapperRef",
+		key: 'setWrapperRef',
 		value: function setWrapperRef(node) {
 
 			this.wrapperRef = node;
 		}
 	}, {
-		key: "handleClickOutside",
+		key: 'handleClickOutside',
 		value: function handleClickOutside(event) {
 			if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
 				this.setState({ show: false });
 			} else {}
 		}
 	}, {
-		key: "show",
+		key: 'show',
 		value: function show() {
 			this.setState({ show: !this.state.show });
 		}
 	}, {
-		key: "annee",
+		key: 'annee',
 		value: function annee(a) {
 			this.setState({ annee: this.state.annee + a });
 		}
 	}, {
-		key: "mois",
+		key: 'mois',
 		value: function mois(a) {
 			this.setState({ mois: this.state.mois + a > 11 ? 0 : this.state.mois + a < 0 ? 11 : this.state.mois + a,
 				annee: this.state.mois + a > 11 ? this.state.annee + 1 : this.state.mois + a < 0 ? this.state.annee - 1 : this.state.annee });
 		}
 	}, {
-		key: "moisMot",
+		key: 'moisMot',
 		value: function moisMot(mois) {
 			var mots = ["janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre"];
 			return mots[mois];
 		}
 	}, {
-		key: "onMouseOver",
+		key: 'onMouseOver',
 		value: function onMouseOver(i) {
 			this.setState({ hover: i });
 		}
 	}, {
-		key: "onMouseOut",
+		key: 'onMouseOut',
 		value: function onMouseOut() {
 			this.setState({ hover: null });
 		}
 	}, {
-		key: "change",
+		key: 'change',
 		value: function change(value, e) {
 			var _state = this.state,
 			    mois = _state.mois,
@@ -558,7 +560,7 @@ var Calendar = function (_Component) {
 			}
 		}
 	}, {
-		key: "render",
+		key: 'render',
 		value: function render() {
 			var _this2 = this;
 
@@ -597,16 +599,16 @@ var Calendar = function (_Component) {
 				}
 			}
 			return _react2.default.createElement(
-				"div",
+				'div',
 				{ ref: this.setWrapperRef },
 				_react2.default.createElement(
-					"div",
+					'div',
 					{ onClick: this.show.bind(this), style: { width: 200, position: "relative", cursor: "pointer" } },
 					this.props.label,
 					LaDate.getDate() + "/" + (LaDate.getMonth() + 1) + "/" + LaDate.getFullYear()
 				),
 				_react2.default.createElement(
-					"div",
+					'div',
 					{ style: {
 							width: 200,
 							borderRadius: 5,
@@ -618,10 +620,10 @@ var Calendar = function (_Component) {
 							zIndex: 98
 						} },
 					_react2.default.createElement(
-						"div",
+						'div',
 						{ style: { display: "flex" } },
 						_react2.default.createElement(
-							"span",
+							'span',
 							{ onClick: this.annee.bind(this, -1), style: {
 									float: "right",
 									paddingLeft: 5,
@@ -630,15 +632,15 @@ var Calendar = function (_Component) {
 									cursor: "pointer",
 									transform: "rotate(180deg)"
 								} },
-							" ^ "
+							' ^ '
 						),
 						_react2.default.createElement(
-							"div",
+							'div',
 							{ style: { flex: 1, textAlign: "center" } },
 							annee
 						),
 						_react2.default.createElement(
-							"span",
+							'span',
 							{ onClick: this.annee.bind(this, 1), style: {
 									float: "right",
 									paddingLeft: 5,
@@ -646,14 +648,14 @@ var Calendar = function (_Component) {
 									fontSize: 15,
 									cursor: "pointer"
 								} },
-							" ^ "
+							' ^ '
 						)
 					),
 					_react2.default.createElement(
-						"div",
+						'div',
 						{ style: { display: "flex" } },
 						_react2.default.createElement(
-							"span",
+							'span',
 							{ onClick: this.mois.bind(this, -1), style: {
 									float: "right",
 									paddingLeft: 5,
@@ -662,15 +664,15 @@ var Calendar = function (_Component) {
 									cursor: "pointer",
 									transform: "rotate(180deg)"
 								} },
-							" ^ "
+							' ^ '
 						),
 						_react2.default.createElement(
-							"div",
+							'div',
 							{ style: { flex: 1, textAlign: "center" } },
 							this.moisMot(mois)
 						),
 						_react2.default.createElement(
-							"span",
+							'span',
 							{ onClick: this.mois.bind(this, 1), style: {
 									float: "right",
 									paddingLeft: 5,
@@ -678,24 +680,24 @@ var Calendar = function (_Component) {
 									fontSize: 15,
 									cursor: "pointer"
 								} },
-							" ^ "
+							' ^ '
 						)
 					),
 					_react2.default.createElement(
-						"div",
+						'div',
 						{ style: { display: "flex", flexWrap: "wrap" } },
 						_react2.default.createElement(
-							"table",
+							'table',
 							{ style: { width: "100%" } },
 							_react2.default.createElement(
-								"thead",
+								'thead',
 								null,
 								_react2.default.createElement(
-									"tr",
+									'tr',
 									{ style: { display: "flex" } },
 									["l", "ma", "me", "j", "v", "s", "d"].map(function (jds, i) {
 										return _react2.default.createElement(
-											"th",
+											'th',
 											{ key: i, style: { flex: 1, textAlign: "center" } },
 											jds
 										);
@@ -703,15 +705,15 @@ var Calendar = function (_Component) {
 								)
 							),
 							_react2.default.createElement(
-								"tbody",
+								'tbody',
 								null,
 								mois_aff.map(function (sem, i) {
 									return _react2.default.createElement(
-										"tr",
+										'tr',
 										{ key: i, style: { display: "flex" } },
 										sem.map(function (lejour, j) {
 											return _react2.default.createElement(
-												"td",
+												'td',
 												{
 													key: j,
 													onMouseOver: _this2.onMouseOver.bind(_this2, "sem" + i + "jour" + j),
@@ -1440,7 +1442,6 @@ var Menu = function (_Component) {
 		value: function style() {
 			return {
 				s_container: {
-					flex: 1,
 					display: "flex",
 					overflow: "hidden",
 					flexDirection: this.props.row ? "row" : "column",
@@ -1723,11 +1724,22 @@ var Rating = function (_Component) {
 		var _this = _possibleConstructorReturn(this, (Rating.__proto__ || Object.getPrototypeOf(Rating)).call(this));
 
 		_this.state = { temp: 0 };
+		_this.out = _this.out.bind(_this);
 		return _this;
 	}
 
 	_createClass(Rating, [{
-		key: "style",
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			document.addEventListener('touchend', this.out);
+		}
+	}, {
+		key: 'componentWillUnmount',
+		value: function componentWillUnmount() {
+			document.removeEventListener('touchend', this.out);
+		}
+	}, {
+		key: 'style',
 		value: function style() {
 			return {
 				full: {
@@ -1745,17 +1757,17 @@ var Rating = function (_Component) {
 			};
 		}
 	}, {
-		key: "over",
+		key: 'over',
 		value: function over(a) {
 			this.setState({ temp: a });
 		}
 	}, {
-		key: "out",
+		key: 'out',
 		value: function out() {
 			this.setState({ temp: 0 });
 		}
 	}, {
-		key: "click",
+		key: 'click',
 		value: function click(e) {
 			var _props = this.props,
 			    name = _props.name,
@@ -1765,7 +1777,7 @@ var Rating = function (_Component) {
 			onChange(e, { name: name, rating: this.state.temp == rating ? 0 : this.state.temp });
 		}
 	}, {
-		key: "render",
+		key: 'render',
 		value: function render() {
 			var _this2 = this;
 
@@ -1779,19 +1791,19 @@ var Rating = function (_Component) {
 
 			rating = rating == undefined ? 0 : rating;
 			return _react2.default.createElement(
-				"div",
+				'div',
 				{ style: _extends({ userSelect: "none", display: "flex", fontSize: 40 }, this.props.style) },
 				_react2.default.createElement(
-					"div",
+					'div',
 					{ style: { userSelect: "none", display: "flex", cursor: this.props.onChange ? "pointer" : "default" }, onClick: this.click.bind(this) },
 					[1, 2, 3, 4, 5].map(function (nb) {
 						return _react2.default.createElement(
-							"div",
+							'div',
 							_defineProperty({ style: { userSelect: "none" }, key: nb,
 								onMouseOut: _this2.props.onChange ? _this2.out.bind(_this2) : function () {},
 								onMouseOver: _this2.props.onChange ? _this2.over.bind(_this2, nb) : function () {}
-							}, "style", temp > nb - .5 ? over : rating > nb - .5 ? full : empty),
-							"\u2605"
+							}, 'style', temp > nb - .5 ? over : rating > nb - .5 ? full : empty),
+							'\u2605'
 						);
 					})
 				)

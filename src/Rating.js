@@ -4,6 +4,14 @@ export default class Rating extends Component {
 	constructor(){
 		super();
 		this.state = {temp:0};
+		this.out = this.out.bind(this)
+	}
+	componentDidMount() {
+		document.addEventListener('touchend', this.out);
+	}
+
+	componentWillUnmount() {
+		document.removeEventListener('touchend', this.out);
 	}
 	style(){
 		return {

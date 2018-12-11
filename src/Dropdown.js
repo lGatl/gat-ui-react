@@ -75,7 +75,7 @@ export default class Dropdown extends Component {
 			}
 		};
 	}
-		componentDidMount() {
+	componentDidMount() {
 		document.addEventListener('mousedown', this.handleClickOutside);
 		document.addEventListener('touchstart', this.handleClickOutside);
 	}
