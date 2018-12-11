@@ -13,6 +13,7 @@ export default class Menu extends Component {
 	style(){
 		return{
 			s_container:{
+				flex:1,
 				display:"flex",
 				overflow:"hidden",
 				flexDirection:this.props.row ? "row" : "column",
@@ -23,18 +24,20 @@ export default class Menu extends Component {
 			mobile:{
 				position:"fixed",
 				zIndex:9999,
-				flex:1,
-				left:this.state.show?0:-500,
+				left:this.props.right?"auto":this.state.show?0:-500,
+				right:this.props.right?this.state.show?0:-500:"auto",
 				transitionDuration: "1s"
 			}
 		};
 	}
 		componentDidMount() {
 		document.addEventListener('mousedown', this.handleClickOutside);
+		document.addEventListener('touchstart', this.handleClickOutside);
 	}
 
 	componentWillUnmount() {
 		document.removeEventListener('mousedown', this.handleClickOutside);
+		document.addEventListener('touchstart', this.handleClickOutside);
 	}
 	setWrapperRef(node) {
 		this.wrapperRef = node;
@@ -72,13 +75,12 @@ export default class Menu extends Component {
 		let {s_container, mobile} = this.style();
 		mobile = this.props.mobile?mobile:{}
 		return (
-			<div className = {this.props.className} style={{...s_container, ...this.props.style}}>
+			<div className = {this.props.className} style={{display:"flex", flexDirection:"column", flex:1 }}>
 				{this.box()}
-				<div ref={this.setWrapperRef} style={{...mobile}}>
+				<div ref={this.setWrapperRef} style={{...s_container,...this.props.style,...mobile}}>
 					{this.props.children}
 				</div>
-				
-				
+
 			</div>
 			
 		);

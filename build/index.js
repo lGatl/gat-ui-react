@@ -1438,6 +1438,7 @@ var Menu = function (_Component) {
 		value: function style() {
 			return {
 				s_container: {
+					flex: 1,
 					display: "flex",
 					overflow: "hidden",
 					flexDirection: this.props.row ? "row" : "column",
@@ -1448,8 +1449,8 @@ var Menu = function (_Component) {
 				mobile: {
 					position: "fixed",
 					zIndex: 9999,
-					flex: 1,
-					left: this.state.show ? 0 : -500,
+					left: this.props.right ? "auto" : this.state.show ? 0 : -500,
+					right: this.props.right ? this.state.show ? 0 : -500 : "auto",
 					transitionDuration: "1s"
 				}
 			};
@@ -1458,11 +1459,13 @@ var Menu = function (_Component) {
 		key: "componentDidMount",
 		value: function componentDidMount() {
 			document.addEventListener('mousedown', this.handleClickOutside);
+			document.addEventListener('touchstart', this.handleClickOutside);
 		}
 	}, {
 		key: "componentWillUnmount",
 		value: function componentWillUnmount() {
 			document.removeEventListener('mousedown', this.handleClickOutside);
+			document.addEventListener('touchstart', this.handleClickOutside);
 		}
 	}, {
 		key: "setWrapperRef",
@@ -1513,11 +1516,11 @@ var Menu = function (_Component) {
 			mobile = this.props.mobile ? mobile : {};
 			return _react2.default.createElement(
 				"div",
-				{ className: this.props.className, style: _extends({}, s_container, this.props.style) },
+				{ className: this.props.className, style: { display: "flex", flexDirection: "column", flex: 1 } },
 				this.box(),
 				_react2.default.createElement(
 					"div",
-					{ ref: this.setWrapperRef, style: _extends({}, mobile) },
+					{ ref: this.setWrapperRef, style: _extends({}, s_container, this.props.style, mobile) },
 					this.props.children
 				)
 			);
