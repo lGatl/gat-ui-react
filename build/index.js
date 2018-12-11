@@ -1093,11 +1093,13 @@ var Dropdown = function (_Component) {
 		key: "componentDidMount",
 		value: function componentDidMount() {
 			document.addEventListener('mousedown', this.handleClickOutside);
+			document.addEventListener('touchstart', this.handleClickOutside);
 		}
 	}, {
 		key: "componentWillUnmount",
 		value: function componentWillUnmount() {
 			document.removeEventListener('mousedown', this.handleClickOutside);
+			document.removeEventListener('touchstart', this.handleClickOutside);
 		}
 	}, {
 		key: "setWrapperRef",
@@ -1465,7 +1467,7 @@ var Menu = function (_Component) {
 		key: "componentWillUnmount",
 		value: function componentWillUnmount() {
 			document.removeEventListener('mousedown', this.handleClickOutside);
-			document.addEventListener('touchstart', this.handleClickOutside);
+			document.removeEventListener('touchstart', this.handleClickOutside);
 		}
 	}, {
 		key: "setWrapperRef",

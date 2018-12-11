@@ -37,7 +37,7 @@ export default class Menu extends Component {
 
 	componentWillUnmount() {
 		document.removeEventListener('mousedown', this.handleClickOutside);
-		document.addEventListener('touchstart', this.handleClickOutside);
+		document.removeEventListener('touchstart', this.handleClickOutside);
 	}
 	setWrapperRef(node) {
 		this.wrapperRef = node;
