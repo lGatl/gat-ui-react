@@ -1774,7 +1774,7 @@ var Rating = function (_Component) {
 			    onChange = _props.onChange,
 			    rating = _props.rating;
 
-			onChange(e, { name: name, rating: this.state.temp == rating ? 0 : this.state.temp });
+			onChange(e, { name: name, rating: this.state.temp == rating && rating != 0 ? 0 : this.state.temp });
 		}
 	}, {
 		key: 'render',

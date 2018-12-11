@@ -37,7 +37,7 @@ export default class Rating extends Component {
 	}
 	click(e){
 		let {name, onChange, rating} = this.props;
-		onChange(e,{name:name,rating:this.state.temp==rating?0:this.state.temp})
+		onChange(e,{name:name,rating:this.state.temp==rating&&rating!=0?0:this.state.temp})
 	}
 	render(){
 		let { full, empty, over } = this.style();
