@@ -4,24 +4,22 @@ export default class Img extends Component {
 	render(){
 		return (
 			this.props.children?
-			<div style = {{
-				display:"flex",
-				alignItems:"center",
-				justifyContent:"center",
-				textAlign:'center',
-				border: 'none',
-				backgroundRepeat:'no-repeat',
-				backgroundSize:'cover',
-				backgroundPosition:'center center',
-				height:'100%',
-				padding:'0',
-				backgroundImage:this.props.src?"url('"+this.props.src+"')":none
-			}}>
-				{this.props.children}
-			</div>:
+					<div style = {{
+						position:"relative",
+						display:"flex",
+						alignItems:"center",
+						justifyContent:"center",
+						textAlign:'center',
+						...this.props.style
+					}}>
+						<img src="/images/image.png" style={{...this.props.im_style}}/>
+						<div style={{position:"absolute"}}>
+							{this.props.children}	
+						</div>				
+					</div>:
 			<img 
 				alt={this.props.alt} 
-				style={{flex:1}} 
+				style={{flex:1, ...this.props.im_style}} 
 				src={this.props.src}
 			/>
 		);

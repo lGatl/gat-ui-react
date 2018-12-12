@@ -1294,6 +1294,8 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(0);
@@ -1322,23 +1324,22 @@ var Img = function (_Component) {
 		value: function render() {
 			return this.props.children ? _react2.default.createElement(
 				"div",
-				{ style: {
+				{ style: _extends({
+						position: "relative",
 						display: "flex",
 						alignItems: "center",
 						justifyContent: "center",
-						textAlign: 'center',
-						border: 'none',
-						backgroundRepeat: 'no-repeat',
-						backgroundSize: 'cover',
-						backgroundPosition: 'center center',
-						height: '100%',
-						padding: '0',
-						backgroundImage: this.props.src ? "url('" + this.props.src + "')" : none
-					} },
-				this.props.children
+						textAlign: 'center'
+					}, this.props.style) },
+				_react2.default.createElement("img", { src: "/images/image.png", style: _extends({}, this.props.im_style) }),
+				_react2.default.createElement(
+					"div",
+					{ style: { position: "absolute" } },
+					this.props.children
+				)
 			) : _react2.default.createElement("img", {
 				alt: this.props.alt,
-				style: { flex: 1 },
+				style: _extends({ flex: 1 }, this.props.im_style),
 				src: this.props.src
 			});
 		}
