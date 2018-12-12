@@ -5,7 +5,7 @@ export default class Img extends Component {
 		return (
 			<img 
 				alt={this.props.alt} 
-				style={{width: "100%",height: "auto"}} 
+				style={{width: "100%",height: "auto",...this.props.style}} 
 				src={this.props.src}
 			/>
 		);

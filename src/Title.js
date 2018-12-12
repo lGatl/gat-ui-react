@@ -6,12 +6,16 @@ export default class Titre extends Component {
 			<span 
 				className = {this.props.className}
 
-				style = {{ 
-					margin:0,
-					padding:10,
-					textAlign:"center",
-					...this.props.style
-				}}>
+				style = {{
+			    display: "block",
+			    fontSize: "2em",
+			    marginBlockStart: "0.67em",
+			    marginBlockEnd: "0.67em",
+			    marginInlineStart: "0px",
+			    marginInlineEnd: "0px",
+			    fontWeight: "bold",
+			    ...this.props.style
+			}}>
 				{ this.props.children||"" }
 			</span>
 		);
