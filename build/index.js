@@ -1324,7 +1324,6 @@ var Img = function (_Component) {
 				"div",
 				{ style: {
 						display: "flex",
-						flex: 1,
 						alignItems: "center",
 						justifyContent: "center",
 						textAlign: 'center',
@@ -1333,7 +1332,8 @@ var Img = function (_Component) {
 						backgroundSize: 'cover',
 						backgroundPosition: 'center center',
 						height: '100%',
-						padding: '0'
+						padding: '0',
+						backgroundImage: this.props.src ? "url('" + this.props.src + "')" : none
 					} },
 				this.props.children
 			) : _react2.default.createElement("img", {

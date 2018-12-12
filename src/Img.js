@@ -6,7 +6,6 @@ export default class Img extends Component {
 			this.props.children?
 			<div style = {{
 				display:"flex",
-				flex:1,
 				alignItems:"center",
 				justifyContent:"center",
 				textAlign:'center',
@@ -16,6 +15,7 @@ export default class Img extends Component {
 				backgroundPosition:'center center',
 				height:'100%',
 				padding:'0',
+				backgroundImage:this.props.src?"url('"+this.props.src+"')":none
 			}}>
 				{this.props.children}
 			</div>:
