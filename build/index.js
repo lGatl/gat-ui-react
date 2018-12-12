@@ -1294,8 +1294,6 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(0);
@@ -1322,9 +1320,25 @@ var Img = function (_Component) {
 	_createClass(Img, [{
 		key: "render",
 		value: function render() {
-			return _react2.default.createElement("img", {
+			return this.props.children ? _react2.default.createElement(
+				"div",
+				{ style: {
+						display: "flex",
+						flex: 1,
+						alignItems: "center",
+						justifyContent: "center",
+						textAlign: 'center',
+						border: 'none',
+						backgroundRepeat: 'no-repeat',
+						backgroundSize: 'cover',
+						backgroundPosition: 'center center',
+						height: '100%',
+						padding: '0'
+					} },
+				this.props.children
+			) : _react2.default.createElement("img", {
 				alt: this.props.alt,
-				style: _extends({ width: "100%", height: "auto" }, this.props.style),
+				style: { flex: 1 },
 				src: this.props.src
 			});
 		}
