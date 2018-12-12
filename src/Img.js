@@ -12,7 +12,10 @@ export default class Img extends Component {
 						textAlign:'center',
 						...this.props.style
 					}}>
-						<img src="/images/image.png" style={{...this.props.im_style}}/>
+						<img 
+						alt={this.props.alt} 
+						src={this.props.src} 
+						style={{...this.props.im_style}}/>
 						<div style={{position:"absolute"}}>
 							{this.props.children}	
 						</div>				

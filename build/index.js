@@ -1331,7 +1331,10 @@ var Img = function (_Component) {
 						justifyContent: "center",
 						textAlign: 'center'
 					}, this.props.style) },
-				_react2.default.createElement("img", { src: "/images/image.png", style: _extends({}, this.props.im_style) }),
+				_react2.default.createElement("img", {
+					alt: this.props.alt,
+					src: this.props.src,
+					style: _extends({}, this.props.im_style) }),
 				_react2.default.createElement(
 					"div",
 					{ style: { position: "absolute" } },
