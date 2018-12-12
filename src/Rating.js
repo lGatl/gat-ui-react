@@ -36,6 +36,7 @@ export default class Rating extends Component {
 		this.setState({temp:0});
 	}
 	click(e){
+		e.preventDefault()
 		let {name, onChange, rating} = this.props;
 		onChange(e,{name:name,rating:this.state.temp==rating&&rating!=0?0:this.state.temp})
 	}
