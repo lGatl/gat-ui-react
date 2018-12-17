@@ -1589,7 +1589,7 @@ var Menu = function (_Component) {
 			mobile = this.props.mobile ? mobile : {};
 			return _react2.default.createElement(
 				"div",
-				{ className: this.props.className, style: { display: "flex", flexDirection: "column", flex: 1 } },
+				{ className: this.props.className, style: { display: "flex", flexDirection: "column" } },
 				this.box(),
 				_react2.default.createElement(
 					"div",

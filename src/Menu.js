@@ -74,7 +74,7 @@ export default class Menu extends Component {
 		let {s_container, mobile} = this.style();
 		mobile = this.props.mobile?mobile:{}
 		return (
-			<div className = {this.props.className} style={{display:"flex", flexDirection:"column", flex:1 }}>
+			<div className = {this.props.className} style={{display:"flex", flexDirection:"column" }}>
 				{this.box()}
 				<div ref={this.setWrapperRef} style={{...s_container,...this.props.style,...mobile}}>
 					{this.props.children}
