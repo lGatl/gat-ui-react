@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-export default class TextArea extends Component {
+export class TextArea extends Component {
 	style(){
 		return{
 			s_container:{

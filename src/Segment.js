@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-export default class Segment extends Component {
+export class Segment extends Component {
 	style(){
 		return{
 

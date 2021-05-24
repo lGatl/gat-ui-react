@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-export default class A extends Component {
+export class A extends Component {
 	render(){
 		return (
 			<a href={this.props.href} draggable={this.props.draggable} style={{

@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-export default class Input extends Component {
+export class Input extends Component {
 	style(){
 		return{
 			s_container:{

@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-export default class Img extends Component {
+export class Img extends Component {
 	render(){
 		return (
 			this.props.children?

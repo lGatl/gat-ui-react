@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-export default class Rating extends Component {
+export class Rating extends Component {
 	constructor(){
 		super();
 		this.state = {temp:0};

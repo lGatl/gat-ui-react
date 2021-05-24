@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-export default class Title2 extends Component {
+export class Title2 extends Component {
 	render(){
 		return (
 			<h2 

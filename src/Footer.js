@@ -5,7 +5,7 @@ import { Segment } from "../../_common/4_dumbComponent/_gat_ui_react";	//j'impor
 //je cree le composent "Footer" qui est en fait une classe javascript
 //On dit a cette classe d'heriter, donc de prendre toutes les fonctionnalitées de Component
 //On ne se pose pas de question il faut le faire a chaque fois
-export default class Footer extends Component {
+export class Footer extends Component {
 	//on pourrait preparer des variables ou meme un constructeur avant render
 
 

@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-export default class Item extends Component {
+export class Item extends Component {
 	constructor(){
 		super();
 		this.state = {hover:false};

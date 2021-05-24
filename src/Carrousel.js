@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-export default class Carrousel extends Component {
+export class Carrousel extends Component {
 	constructor(){
 		super();
 		this.state = {
